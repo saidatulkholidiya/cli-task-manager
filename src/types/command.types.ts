@@ -2,7 +2,7 @@ import { TaskStatus, Priority } from "./task.types";
 
 export type Command =
   | { type: "add";      judul: string; prioritas?: Priority }
-  | { type: "list";     filter?: { status?: TaskStatus; prioritas?: Priority } }
+  | { type: "list";     filterStatus?: TaskStatus }
   | { type: "done";     id: number }
   | { type: "progress"; id: number }
   | { type: "delete";   id: number }

@@ -1,2 +1,1 @@
-// Tempat export TaskRepository (Selasa)
-export {};
+export * from "./TaskRepository.js";

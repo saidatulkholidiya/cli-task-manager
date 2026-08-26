@@ -1,2 +1,1 @@
-// Tempat export CLI parser & commands (Rabu)
-export {};
+export * from "./parser.js";

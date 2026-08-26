@@ -1,2 +1,2 @@
-export * from "./task.types";
-export * from "./command.types";
+export * from "./task.types.js";
+export * from "./command.types.js";
