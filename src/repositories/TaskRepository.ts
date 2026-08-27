@@ -4,6 +4,13 @@ export class TaskRepository {
   private tasks: Task[] = [];
   private nextId = 1;
 
+  constructor(initialTasks: Task[] = []) {
+    this.tasks = initialTasks;
+    if (initialTasks.length > 0) {
+      this.nextId = Math.max(...initialTasks.map((t) => t.id)) + 1;
+    }
+  }
+
   create(data: { judul: string; prioritas: Priority }): Task {
     const now = new Date().toISOString();
     const newTask: Task = {

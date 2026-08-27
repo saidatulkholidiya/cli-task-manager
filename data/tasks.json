@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "judul": "Task pertama",
+    "status": "done",
+    "prioritas": "medium",
+    "createdAt": "2026-08-27T07:46:47.227Z",
+    "updatedAt": "2026-08-27T07:49:47.075Z"
+  },
+  {
+    "id": 2,
+    "judul": "Task kedua",
+    "status": "todo",
+    "prioritas": "medium",
+    "createdAt": "2026-08-27T07:47:17.042Z",
+    "updatedAt": "2026-08-27T07:47:17.042Z"
+  }
+]

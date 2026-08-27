@@ -2,9 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TaskRepository = void 0;
 class TaskRepository {
-    constructor() {
+    constructor(initialTasks = []) {
         this.tasks = [];
         this.nextId = 1;
+        this.tasks = initialTasks;
+        if (initialTasks.length > 0) {
+            this.nextId = Math.max(...initialTasks.map((t) => t.id)) + 1;
+        }
     }
     create(data) {
         const now = new Date().toISOString();
