@@ -1,4 +1,4 @@
-import { Task, TaskStatus, Priority } from "../types/index.js";
+import type { Task, TaskStatus, Priority } from "../types/task.types";
 
 export class TaskRepository {
   private tasks: Task[] = [];
@@ -38,6 +38,9 @@ export class TaskRepository {
     if (task) {
       task.status = status;
       task.updatedAt = new Date().toISOString();
+      if (status === "done") {
+        task.completedAt = task.updatedAt;
+      }
     }
     return task;
   }

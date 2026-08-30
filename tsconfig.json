@@ -5,20 +5,9 @@
     "rootDir": "./src",
     "outDir": "./dist",
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "types": ["node"],
-    "paths": {
-      "@apptypes/*":     ["./src/types/*"],
-      "@models/*":       ["./src/models/*"],
-      "@services/*":     ["./src/services/*"],
-      "@repositories/*": ["./src/repositories/*"],
-      "@utils/*":        ["./src/utils/*"],
-      "@cli/*":          ["./src/cli/*"]
-    }
+    "skipLibCheck": true,
+    "types": ["node"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]

@@ -24,23 +24,24 @@ export function tampilkanDaftarTask(tasks: Task[]): void {
 
 export function tampilkanStats(stats: TaskStats): void {
   console.log("\n=== STATISTIK TASK ===");
-  console.log(`Total Task  : ${stats.total}`);
-  console.log(`Todo        : ${stats.todo}`);
-  console.log(`In Progress : ${stats.inProgress}`);
-  console.log(`Done        : ${stats.done}\n`);
+  console.log(`Total Task       : ${stats.total}`);
+  console.log(`Todo             : ${stats.todo}`);
+  console.log(`In Progress      : ${stats.inProgress}`);
+  console.log(`Done             : ${stats.done}`);
+  console.log(`Selesai (%)      : ${stats.persentaseSelesai}%\n`);
 }
 
 export function tampilkanHelp(): void {
   console.log("\n=== DAFTAR PERINTAH CLI ===");
-  console.log("add <judul>             : Menambahkan task baru");
-  console.log("list [status]           : Menampilkan daftar task (semua/todo/in_progress/done)");
-  console.log("done <id>               : Menandai task selesai");
-  console.log("update <id> <judul>     : Mengubah judul task");
-  console.log("status <id> <status>    : Mengubah status task (todo/in_progress/done)");
-  console.log("priority <id> <prioritas>: Mengubah prioritas task (low/medium/high)");
-  console.log("delete <id>             : Menghapus task");
-  console.log("stats                   : Menampilkan statistik task");
-  console.log("help                    : Menampilkan daftar bantuan ini\n");
+  console.log("add \"Judul task\"       : Menambahkan task baru");
+  console.log("list                   : Menampilkan semua task");
+  console.log("list --status <status> : Filter task berdasarkan status (todo/in_progress/done)");
+  console.log("done <id>              : Menandai task selesai");
+  console.log("progress <id>          : Menandai task sedang dikerjakan");
+  console.log("delete <id>            : Menghapus task");
+  console.log("search \"kata kunci\"    : Mencari task berdasarkan kata kunci");
+  console.log("stats                  : Menampilkan statistik task");
+  console.log("help                   : Menampilkan bantuan ini\n");
 }
 
 export function tampilkanError(pesan: string): void {

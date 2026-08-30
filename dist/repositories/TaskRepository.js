@@ -34,6 +34,9 @@ class TaskRepository {
         if (task) {
             task.status = status;
             task.updatedAt = new Date().toISOString();
+            if (status === "done") {
+                task.completedAt = task.updatedAt;
+            }
         }
         return task;
     }

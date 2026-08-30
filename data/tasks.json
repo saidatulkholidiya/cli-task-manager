@@ -5,14 +5,39 @@
     "status": "done",
     "prioritas": "medium",
     "createdAt": "2026-08-27T07:46:47.227Z",
-    "updatedAt": "2026-08-27T07:49:47.075Z"
+    "updatedAt": "2026-08-28T05:59:52.052Z"
   },
   {
     "id": 2,
     "judul": "Task kedua",
-    "status": "todo",
+    "status": "done",
     "prioritas": "medium",
     "createdAt": "2026-08-27T07:47:17.042Z",
-    "updatedAt": "2026-08-27T07:47:17.042Z"
+    "updatedAt": "2026-08-29T09:04:37.371Z",
+    "completedAt": "2026-08-29T09:04:37.371Z"
+  },
+  {
+    "id": 3,
+    "judul": "Mengerjakan README Proyek",
+    "status": "todo",
+    "prioritas": "medium",
+    "createdAt": "2026-08-28T05:57:43.939Z",
+    "updatedAt": "2026-08-28T05:57:43.939Z"
+  },
+  {
+    "id": 4,
+    "judul": "Persiapan Demo Mentor",
+    "status": "todo",
+    "prioritas": "medium",
+    "createdAt": "2026-08-28T05:58:22.383Z",
+    "updatedAt": "2026-08-28T05:58:22.383Z"
+  },
+  {
+    "id": 6,
+    "judul": "Belajar Typescript",
+    "status": "todo",
+    "prioritas": "medium",
+    "createdAt": "2026-08-29T08:54:41.616Z",
+    "updatedAt": "2026-08-29T08:54:41.616Z"
   }
 ]

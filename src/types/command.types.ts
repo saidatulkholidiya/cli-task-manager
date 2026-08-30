@@ -1,4 +1,4 @@
-import { TaskStatus, Priority } from "./task.types";
+import type { TaskStatus, Priority } from "./task.types";
 
 export type Command =
   | { type: "add";      judul: string; prioritas?: Priority }

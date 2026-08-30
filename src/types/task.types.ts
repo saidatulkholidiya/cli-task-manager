@@ -11,7 +11,6 @@ export interface Task {
   updatedAt: string;
   completedAt?: string;
 }
-
 export type TaskBaru = Omit<Task, "id" | "createdAt" | "updatedAt" | "completedAt">;
 export type TaskUpdate = Partial<Omit<Task, "id" | "createdAt">>;
 

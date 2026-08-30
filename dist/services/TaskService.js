@@ -1,14 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TaskService = void 0;
-const index_js_1 = require("../utils/index.js");
+const validasi_1 = require("../utils/validasi");
 class TaskService {
     constructor(repo) {
         this.repo = repo;
     }
     tambahTask(judul, prioritas = "medium") {
-        if (!(0, index_js_1.isJudulValid)(judul)) {
-            throw new Error("Judul task minimal harus 3 karakter!");
+        if (!(0, validasi_1.isJudulValid)(judul)) {
+            throw new Error("Judul task minimal 3 karakter!");
         }
         return this.repo.create({ judul, prioritas });
     }

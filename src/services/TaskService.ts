@@ -1,6 +1,6 @@
-import { Task, TaskStatus, Priority, TaskStats } from "../types/index.js";
-import { TaskRepository } from "../repositories/index.js";
-import { isJudulValid } from "../utils/index.js";
+import type { Task, TaskStatus, Priority, TaskStats } from "../types";
+import { TaskRepository } from "../repositories/TaskRepository";
+import { isJudulValid } from "../utils/validasi";
 
 export class TaskService {
   private repo: TaskRepository;
@@ -11,7 +11,7 @@ export class TaskService {
 
   tambahTask(judul: string, prioritas: Priority = "medium"): Task {
     if (!isJudulValid(judul)) {
-      throw new Error("Judul task minimal harus 3 karakter!");
+      throw new Error("Judul task minimal 3 karakter!");
     }
     return this.repo.create({ judul, prioritas });
   }

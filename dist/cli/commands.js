@@ -10,7 +10,8 @@ function jalankanCommand(command, service) {
                 return (0, display_1.tampilkanSukses)(`Task #${task.id} berhasil ditambahkan`);
             }
             catch (error) {
-                return (0, display_1.tampilkanError)(error.message || "Gagal menambahkan task");
+                const msg = error instanceof Error ? error.message : "Gagal menambahkan task";
+                return (0, display_1.tampilkanError)(msg);
             }
         }
         case "list": {
@@ -23,13 +24,13 @@ function jalankanCommand(command, service) {
             const task = service.ubahStatus(command.id, "done");
             if (!task)
                 return (0, display_1.tampilkanError)(`Task #${command.id} tidak ditemukan`);
-            return (0, display_1.tampilkanSukses)(`Task #${task.id} ditandai selesai`);
+            return (0, display_1.tampilkanSukses)(`Task #${command.id} ditandai selesai`);
         }
         case "progress": {
             const task = service.ubahStatus(command.id, "in_progress");
             if (!task)
                 return (0, display_1.tampilkanError)(`Task #${command.id} tidak ditemukan`);
-            return (0, display_1.tampilkanSukses)(`Task #${task.id} diubah ke in_progress`);
+            return (0, display_1.tampilkanSukses)(`Task #${command.id} diubah ke in_progress`);
         }
         case "search": {
             const hasil = service.cariTask(command.keyword);

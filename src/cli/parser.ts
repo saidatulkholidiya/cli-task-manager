@@ -1,5 +1,5 @@
-import { Command } from "../types/index.js";
-import { isStatusValid } from "../utils/index.js";
+import type { Command } from "../types/command.types";
+import { isStatusValid } from "../utils/validasi";
 
 export function parseArgs(args: string[]): Command {
   const [perintah, ...sisanya] = args;
@@ -31,7 +31,7 @@ export function parseArgs(args: string[]): Command {
       return { type: "delete", id: Number(sisanya[0]) };
 
     case "search":
-      return { type: "search", keyword: sisanya.join(" ") };
+      return { type: "search", keyword: sisanya.join(" ").replace(/^["']|["']$/g, "") };
 
     case "stats":
       return { type: "stats" };

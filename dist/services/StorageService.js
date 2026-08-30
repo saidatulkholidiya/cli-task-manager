@@ -36,7 +36,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.StorageService = void 0;
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
-const DATA_DIR = path.join(__dirname, "../../data");
+const DATA_DIR = path.join(process.cwd(), "data");
 const DATA_FILE = path.join(DATA_DIR, "tasks.json");
 class StorageService {
     static muat() {
@@ -46,7 +46,7 @@ class StorageService {
             const isi = fs.readFileSync(DATA_FILE, "utf-8");
             return JSON.parse(isi);
         }
-        catch (error) {
+        catch {
             console.error("Gagal memuat data, memulai dengan data kosong.");
             return [];
         }

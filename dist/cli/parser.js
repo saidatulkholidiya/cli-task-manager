@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.parseArgs = parseArgs;
-const index_js_1 = require("../utils/index.js");
+const validasi_1 = require("../utils/validasi");
 function parseArgs(args) {
     const [perintah, ...sisanya] = args;
     switch (perintah) {
@@ -13,7 +13,7 @@ function parseArgs(args) {
             const statusIdx = sisanya.indexOf("--status");
             if (statusIdx !== -1 && sisanya[statusIdx + 1]) {
                 const status = sisanya[statusIdx + 1];
-                if ((0, index_js_1.isStatusValid)(status)) {
+                if ((0, validasi_1.isStatusValid)(status)) {
                     return { type: "list", filterStatus: status };
                 }
             }
@@ -26,7 +26,7 @@ function parseArgs(args) {
         case "delete":
             return { type: "delete", id: Number(sisanya[0]) };
         case "search":
-            return { type: "search", keyword: sisanya.join(" ") };
+            return { type: "search", keyword: sisanya.join(" ").replace(/^["']|["']$/g, "") };
         case "stats":
             return { type: "stats" };
         case "help":

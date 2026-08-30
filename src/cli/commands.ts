@@ -1,4 +1,4 @@
-import type { Command } from "../types/command.types";
+import type { Command } from "../types";
 import { TaskService } from "../services/TaskService";
 import {
   tampilkanDaftarTask,
@@ -14,8 +14,9 @@ export function jalankanCommand(command: Command, service: TaskService): void {
       try {
         const task = service.tambahTask(command.judul, command.prioritas);
         return tampilkanSukses(`Task #${task.id} berhasil ditambahkan`);
-      } catch (error: any) {
-        return tampilkanError(error.message || "Gagal menambahkan task");
+      } catch (error: unknown) {
+        const msg = error instanceof Error ? error.message : "Gagal menambahkan task";
+        return tampilkanError(msg);
       }
     }
 
@@ -29,13 +30,13 @@ export function jalankanCommand(command: Command, service: TaskService): void {
     case "done": {
       const task = service.ubahStatus(command.id, "done");
       if (!task) return tampilkanError(`Task #${command.id} tidak ditemukan`);
-      return tampilkanSukses(`Task #${task.id} ditandai selesai`);
+      return tampilkanSukses(`Task #${command.id} ditandai selesai`);
     }
 
     case "progress": {
       const task = service.ubahStatus(command.id, "in_progress");
       if (!task) return tampilkanError(`Task #${command.id} tidak ditemukan`);
-      return tampilkanSukses(`Task #${task.id} diubah ke in_progress`);
+      return tampilkanSukses(`Task #${command.id} diubah ke in_progress`);
     }
 
     case "search": {
